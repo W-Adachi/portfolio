@@ -1,0 +1,141 @@
+/* 全体設定 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f8fafc;
+    color: #0A192F;
+}
+
+/* ヘッダー */
+.header {
+    background-color: #0A192F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.header__title {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.header__nav-item {
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.header__github-img {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+/* ヒーローエリア */
+.first-view-wrap {
+    width: 100%;
+    height: 320px;
+    background: linear-gradient(180deg, #98c8f7 0%, #ffffff 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.first-view__title {
+    color: #0A192F;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.first-view__description {
+    color: #4A5568;
+    font-size: 16px;
+}
+
+/* 検索フォームエリア */
+.search-form-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.search-form {
+    display: flex;
+    gap: 12px;
+}
+
+.search-form__input {
+    width: 360px;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.search-form__button {
+    width: 80px;
+    height: 40px;
+    background-color: #0055FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* コンテンツカード一覧エリア */
+.contents-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.contents__item {
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.contents__item-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.contents__item-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.contents__item-title {
+    font-size: 20px;
+    color: #0A192F;
+    margin-bottom: 8px;
+}
+
+.contents__item-text {
+    font-size: 14px;
+    color: #4A5568;
+}
