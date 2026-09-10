@@ -9,6 +9,12 @@ body {
     font-family: sans-serif;
     background-color: #f8fafc;
     color: #0A192F;
+    overflow-x: hidden;
+
+    /* ★ 以下の4行を追加してフッターを一番下に強制配置します */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* ヘッダー */
@@ -17,29 +23,29 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 16px 20px; /* スマホ向けにパディングを縮小 */
 }
 
 .header__title {
     color: #ffffff;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .header__nav {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 16px;
 }
 
 .header__nav-item {
     color: #ffffff;
-    font-size: 18px;
+    font-size: 15px;
     text-decoration: none;
 }
 
 .header__github-img {
-    width: 120px;
+    width: 32px; /* スマホでも崩れない適切なサイズに修正 */
     height: auto;
     display: block;
 }
@@ -47,63 +53,70 @@ body {
 /* ヒーローエリア */
 .first-view-wrap {
     width: 100%;
-    height: 320px;
+    height: 240px;
     background: linear-gradient(180deg, #98c8f7 0%, #ffffff 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
+    padding: 0 20px;
+    text-align: center;
 }
 
 .first-view__title {
     color: #0A192F;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
 }
 
 .first-view__description {
     color: #4A5568;
-    font-size: 16px;
+    font-size: 14px;
 }
 
-/* 検索フォームエリア */
+/* 検索フォームエリア（スマホ対応） */
 .search-form-wrap {
     display: flex;
     justify-content: center;
-    margin: 40px 0;
+    margin: 30px 0;
+    padding: 0 20px;
 }
 
 .search-form {
     display: flex;
-    gap: 12px;
+    gap: 8px;
+    width: 100%;
+    max-width: 480px; /* PCでは最大480px、スマホでは100%に伸縮 */
 }
 
 .search-form__input {
-    width: 360px;
+    flex: 1; /* 親要素の残りの幅をいっぱいに使う */
+    min-width: 0; /* flex内の溢れ出し防止 */
     height: 40px;
     padding: 0 12px;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .search-form__button {
-    width: 80px;
+    width: 70px;
     height: 40px;
     background-color: #0055FF;
     color: #ffffff;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
+    flex-shrink: 0; /* ボタンが潰れるのを防止 */
 }
 
 /* コンテンツカード一覧エリア */
 .contents-wrap {
     display: flex;
     justify-content: center;
-    gap: 32px;
+    gap: 24px;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto 60px;
@@ -111,7 +124,8 @@ body {
 }
 
 .contents__item {
-    width: 300px;
+    width: 100%;
+    max-width: 300px; /* スマホでは画面幅にフィット、PCでは最大300px */
     background-color: #ffffff;
     border-radius: 12px;
     overflow: hidden;
@@ -120,17 +134,17 @@ body {
 
 .contents__item-img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
 }
 
 .contents__item-body {
-    padding: 20px;
+    padding: 16px;
     text-align: center;
 }
 
 .contents__item-title {
-    font-size: 20px;
+    font-size: 18px;
     color: #0A192F;
     margin-bottom: 8px;
 }
@@ -138,4 +152,60 @@ body {
 .contents__item-text {
     font-size: 14px;
     color: #4A5568;
+}
+
+/* フッター全体 */
+.footer {
+    background-color: #0A192F;
+    color: #8892B0;
+    padding: 30px 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: auto; /* ★ 上の余白を自動計算して一番下に押し出します */
+    position: relative; /* ★ 他の要素より手前に表示 */
+    z-index: 10;
+}
+
+.footer__inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+/* フッターナビゲーション */
+.footer__nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer__nav a {
+    color: #CCD6F6;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+.footer__nav a:hover {
+    color: #64FFDA;
+}
+
+/* SNSリンク・コピーライト */
+.footer__sns a {
+    color: #CCD6F6;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.footer__copy {
+    font-size: 0.75rem;
+    color: #8892B0;
+    margin: 0;
 }

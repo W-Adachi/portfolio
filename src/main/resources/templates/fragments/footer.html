@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <footer class="footer" th:fragment="footer">
+        <div class="footer__inner">
+            <nav class="footer__nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="footer__sns">
+                <a href="https://github.com/W-Adachi" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="header__nav-item">
+                    <img th:src="@{/img/GitHub_Invertocat_White.svg}" 
+                    src="/img/GitHub_Invertocat_White.svg" 
+                    alt="GitHub" 
+                    class="header__github-img">
+                </a>
+            </div>
+            <p class="footer__copy">&copy; 2026 Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

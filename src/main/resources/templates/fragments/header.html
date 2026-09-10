@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <!-- th:fragment でこの <header> タグに "header" という名前をつけます -->
+        <header class="header" th:fragment="header">
+            <h1 class="header__title">KNOWLEDGE & PORTFOLIO</h1>
+            <nav class="header__nav">
+                <a href="#Home" class="header__nav-item">Home</a>
+                <a href="#About" class="header__nav-item">About Me</a>
+                <a href="https://github.com/W-Adachi" target="_blank" rel="noopener noreferrer" class="header__nav-item">
+                    <img th:src="@{/img/GitHub_Lockup_White_Clearspace.svg}" src="/img/GitHub_Lockup_White_Clearspace.svg" alt="GitHub" class="header__github-img">
+                </a>
+            </nav>
+        </header>
+</body>
+</html>
