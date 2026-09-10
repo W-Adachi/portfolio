@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ポートフォリオ</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}" href="/src/main/resources/static/css/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="header__title">KNOWLEDGE & PORTFOLIO</h1>
+            <nav class="header__nav">
+                <a href="#Home" class="header__nav-item">Home</a>
+                <a href="#About" class="header__nav-item">About Me</a>
+                <a href="https://github.com/W-Adachi" target="_blank" rel="noopener noreferrer" class="header__nav-item">
+                    <img th:src="@{/img/GitHub_Lockup_White_Clearspace.svg}" src="/src/main/resources/static/   img/GitHub_Lockup_White_Clearspace.svg" alt="GitHub" class="header__github-img">
+                </a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- ヒーローエリア -->
+            <div class="first-view-wrap">
+                <h2 class="first-view__title">学びを構造化し、探索可能にするエンジニアリングノート</h2>
+                <p class="first-view__description">Java・Spring Bootの学習プロセスと開発成果物を言語・カテゴリ別に集約</p>
+            </div>
+
+            <!-- 検索フォームエリア -->
+            <div class="search-form-wrap">
+                <form action="#" method="get" class="search-form">
+                    <input type="text" name="keyword" class="search-form__input" placeholder="キーワードを入力">
+                    <button type="submit" class="search-form__button">検索</button>
+                </form>
+            </div>
+
+            <!-- コンテンツカード一覧エリア -->
+            <div class="contents-wrap">
+                <div class="contents__item">
+                    <img th:src="@{/img/Group 10.png}" src="/src/main/resources/static/img/Group 10.png" alt="サムネイル" class="contents__item-img">
+                    <div class="contents__item-body">
+                        <h3 class="contents__item-title">開発成果物</h3>
+                        <p class="contents__item-text">hogehoge</p>
+                    </div>
+                </div>
+
+                <div class="contents__item">
+                    <img th:src="@{/img/Group 10.png}" src="/src/main/resources/static/img/Group 10.png" alt="サムネイル" class="contents__item-img">
+                    <div class="contents__item-body">
+                        <h3 class="contents__item-title">開発成果物</h3>
+                        <p class="contents__item-text">hogehoge</p>
+                    </div>
+                </div>
+
+                <div class="contents__item">
+                    <img th:src="@{/img/Group 10.png}" src="/src/main/resources/static/img/Group 10.png" alt="サムネイル" class="contents__item-img">
+                    <div class="contents__item-body">
+                        <h3 class="contents__item-title">開発成果物</h3>
+                        <p class="contents__item-text">hogehoge</p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </body>
+</html>
