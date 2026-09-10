@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ポートフォリオ</title>
-        <link rel="stylesheet" th:href="@{/css/style.css}" href="/src/main/resources/static/css/style.css">
+        <link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css">
     </head>
     <body>
         <header class="header">
@@ -13,7 +13,7 @@
                 <a href="#Home" class="header__nav-item">Home</a>
                 <a href="#About" class="header__nav-item">About Me</a>
                 <a href="https://github.com/W-Adachi" target="_blank" rel="noopener noreferrer" class="header__nav-item">
-                    <img th:src="@{/img/GitHub_Lockup_White_Clearspace.svg}" src="/src/main/resources/static/   img/GitHub_Lockup_White_Clearspace.svg" alt="GitHub" class="header__github-img">
+                    <img th:src="@{/img/GitHub_Lockup_White_Clearspace.svg}" src="/img/GitHub_Lockup_White_Clearspace.svg" alt="GitHub" class="header__github-img">
                 </a>
             </nav>
         </header>
@@ -34,32 +34,15 @@
             </div>
 
             <!-- コンテンツカード一覧エリア -->
-            <div class="contents-wrap">
-                <div class="contents__item">
-                    <img th:src="@{/img/Group 10.png}" src="/src/main/resources/static/img/Group 10.png" alt="サムネイル" class="contents__item-img">
-                    <div class="contents__item-body">
-                        <h3 class="contents__item-title">開発成果物</h3>
-                        <p class="contents__item-text">hogehoge</p>
-                    </div>
-                </div>
-
-                <div class="contents__item">
-                    <img th:src="@{/img/Group 10.png}" src="/src/main/resources/static/img/Group 10.png" alt="サムネイル" class="contents__item-img">
-                    <div class="contents__item-body">
-                        <h3 class="contents__item-title">開発成果物</h3>
-                        <p class="contents__item-text">hogehoge</p>
-                    </div>
-                </div>
-
-                <div class="contents__item">
-                    <img th:src="@{/img/Group 10.png}" src="/src/main/resources/static/img/Group 10.png" alt="サムネイル" class="contents__item-img">
-                    <div class="contents__item-body">
-                        <h3 class="contents__item-title">開発成果物</h3>
-                        <p class="contents__item-text">hogehoge</p>
-                    </div>
-                </div>
-
-            </div>
-        </main>
+<div class="contents-wrap">
+    <div class="contents__item" th:each="project : ${projects}">
+        <!-- 画像パスは直接変数参照(${project.imagePath})にするか、固定パスにします -->
+        <img th:src="${project.imagePath}" src="/img/Group 10.png" alt="サムネイル" class="contents__item-img">
+        <div class="contents__item-body">
+            <h3 class="contents__item-title" th:text="${project.title}">開発成果物</h3>
+            <p class="contents__item-text" th:text="${project.description}">hogehoge</p>
+        </div>
+    </div>
+</div>        </main>
     </body>
 </html>
