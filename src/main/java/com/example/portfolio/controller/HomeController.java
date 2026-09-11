@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import com.example.portfolio.form.SampleForm;
 
 @Controller
 public class HomeController {
@@ -22,6 +23,9 @@ public class HomeController {
 
         // HTML 側へ "projects" という名前でリストを渡す
         model.addAttribute("projects", projects);
+
+        //フォームバインド用のからオブヘクトをセット
+        model.addAttribute("sampleForm", new SampleForm());
 
         return "index";
     }
