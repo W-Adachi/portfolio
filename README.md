@@ -28,3 +28,23 @@ Spring Boot と Thymeleaf を使用して構築した、保守性と拡張性を
 - [ ] **GitHub REST API によるリポジトリ自動連動**
   - GitHub REST API を経由して自身の GitHub リポジトリ情報を動的に取得
   - README の技術スタックやトピックタグを解析し、成果物カードの自動生成・タグ絞り込み機能の実装
+     
+  ## 🛠️ 技術スタック & バッジ
+![Java](https://img.shields.io/badge/Java-17-orange?style=flat-square&logo=openjdk)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.3-green?style=flat-square&logo=springboot)
+![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.1-005F0F?style=flat-square&logo=thymeleaf)
+![Gradle](https://img.shields.io/badge/Gradle-8.x-02303A?style=flat-square&logo=gradle)
+
+## 📁 ディレクトリ構造（主要部分）
+```text
+src/main/
+├── java/com/example/portfolio/
+│   ├── controller/      # リクエスト処理・画面制御
+│   ├── form/            # フォームオブジェクト・バリデーション定義
+│   └── service/         # ビジネスロジック
+└── resources/
+    ├── templates/       # Thymeleaf HTMLテンプレート
+    │   ├── fragments/   # 共通パーツ（header, footerなど）
+    │   └── index.html   # メイン画面
+    └── static/          # CSS, JS, 画像ファイル
+```
