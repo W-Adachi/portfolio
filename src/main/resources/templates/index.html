@@ -28,12 +28,13 @@
             <!-- コンテンツカード一覧エリア -->
             <div class="contents-wrap">
                 <div class="contents__item" th:each="project : ${projects}">
-                    <!-- 画像パスは直接変数参照(${project.imagePath})にするか、固定パスにします -->
-                    <img th:src="${project.imagePath}" src="/img/Group 10.png" alt="サムネイル" class="contents__item-img">
-                    <div class="contents__item-body">
-                        <h3 class="contents__item-title" th:text="${project.title}">開発成果物</h3>
-                        <p class="contents__item-text" th:text="${project.description}">hogehoge</p>
-                    </div>
+                    <a th:href="@{/projects/{id}(id=${project.id})}" class="contents__item-link">
+                        <img th:src="${project.imagePath}" src="/img/Group 10.png" alt="サムネイル" class="contents__item-img">
+                        <div class="contents__item-body">
+                            <h3 class="contents__item-title" th:text="${project.title}">開発成果物</h3>
+                            <p class="contents__item-text" th:text="${project.description}">hogehoge</p>
+                        </div>
+                    </a>
                 </div>
             </div>      
         </main>
